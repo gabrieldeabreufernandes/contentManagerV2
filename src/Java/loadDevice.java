@@ -269,7 +269,7 @@ public class loadDevice extends javax.swing.JFrame {
                 destChannel.close();  
             }  
 
-            Runtime.getRuntime().exec("explorer " + destino.getAbsolutePath());    
+            //Runtime.getRuntime().exec("explorer " + destino.getAbsolutePath());    
 
         } catch (IOException e) {  
 
@@ -277,6 +277,26 @@ public class loadDevice extends javax.swing.JFrame {
 
         } finally {  
 
+            for (int i = 1; i <= 100; i++) {
+                try {
+                        jProgressBar1.repaint();
+                        jProgressBar1.setValue(i);
+                        jProgressBar1.setString(i + "%");
+                        jProgressBar1.repaint();
+                        Thread.sleep(5);
+                } catch (InterruptedException ex) {
+                        ex.printStackTrace();
+                }
+                //JOptionPane.showMessageDialog(null,"Package Generate uccessfull");
+            } 
+            try {
+                Thread.sleep(50);
+                //JOptionPane.showMessageDialog(null,"Package Generate uccessfull");
+                //Runtime.getRuntime().exec("explorer " + destino.getAbsolutePath());   
+            } catch (InterruptedException ex) {
+                Logger.getLogger(loadDevice.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
             if (oriChannel != null && oriChannel.isOpen()) {  
 
                 try {  
@@ -293,8 +313,31 @@ public class loadDevice extends javax.swing.JFrame {
                 } catch (IOException ex) {
                     Logger.getLogger(loadDevice.class.getName()).log(Level.SEVERE, null, ex);
                 }
-            }  
+            }
+            
+            try {
+                Thread.sleep(150);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(loadDevice.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            JOptionPane.showMessageDialog(null,"Package Generate uccessfull");
+            try {   
+                Runtime.getRuntime().exec("explorer " + destino.getAbsolutePath());
+            } catch (IOException ex) {
+                Logger.getLogger(loadDevice.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
+        
+        /*
+        for (int i = 1; i <= 100; i++) {
+            try {
+                    jProgressBar1.setValue(i);
+                    jProgressBar1.setString(i + "%");
+                    Thread.sleep(20);
+            } catch (InterruptedException ex) {
+                    ex.printStackTrace();
+            }
+	} */
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
