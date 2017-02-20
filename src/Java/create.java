@@ -21,8 +21,8 @@ public class create extends javax.swing.JFrame {
     private route fileContent = new route();
     //ArrayList<route> routeContent = new ArrayList<route>();//  null;
     ArrayList<String> routeContent = new ArrayList<String>();
+    private loadDevice loadDev = new loadDevice();
      
-    
     /**
      * Creates new form create
      */
@@ -148,6 +148,7 @@ public class create extends javax.swing.JFrame {
         jLabelMinutes = new javax.swing.JLabel();
         btLoadDevice = new javax.swing.JButton();
         btGenerateRoute = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1024, 650));
@@ -501,11 +502,23 @@ public class create extends javax.swing.JFrame {
         jLabelMinutes.setText("(minutes)");
 
         btLoadDevice.setText("Load Device");
+        btLoadDevice.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btLoadDeviceActionPerformed(evt);
+            }
+        });
 
         btGenerateRoute.setText("Generate Route");
         btGenerateRoute.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btGenerateRouteActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("Exit");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -704,7 +717,9 @@ public class create extends javax.swing.JFrame {
                 .addComponent(btLoadDevice, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btBack, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(96, 96, 96))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(116, 116, 116))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -922,12 +937,13 @@ public class create extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jComboBox18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btSearchFile18))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btBack)
                     .addComponent(btLoadDevice)
-                    .addComponent(btGenerateRoute))
-                .addGap(22, 22, 22))
+                    .addComponent(btGenerateRoute)
+                    .addComponent(jButton1))
+                .addGap(21, 21, 21))
         );
 
         pack();
@@ -1188,15 +1204,16 @@ public class create extends javax.swing.JFrame {
         //SALVAR EM ARQUIVO
         boolean isOK = true;
         
-        File dir = new File("C:\\ACTIA\\ContentManager\\Config\\");
+        File dir = new File("C:\\ACTIA\\ContentManager\\config\\");
         File arq = new File(dir, txtFieldRouteName.getText()+ ".txt");
         String[] children = dir.list();
 
+        /*
         if (children.length > 0) {
             System.out.println("Existe arquivo no diretorio..");
         }else{
             System.out.println("NAO existe arquivo no diretorio..");
-        }
+        }*/
         
         if (dir.exists()) {
             if(arq.exists()){
@@ -1268,6 +1285,25 @@ public class create extends javax.swing.JFrame {
         System.out.println("Name inserted = " + txtFieldRouteName.getText());
     }//GEN-LAST:event_txtFieldRouteNameFocusLost
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void btLoadDeviceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLoadDeviceActionPerformed
+
+        if(loadDev == null){
+            loadDev = new loadDevice();
+            loadDev.setLocationRelativeTo(null);
+            loadDev.setVisible(true);
+            loadDev.setResizable(false);
+        }else{
+            loadDev.setLocationRelativeTo(null);
+            loadDev.setVisible(true);
+            loadDev.setResizable(false);
+        }
+        this.dispose();        
+    }//GEN-LAST:event_btLoadDeviceActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1326,6 +1362,7 @@ public class create extends javax.swing.JFrame {
     private javax.swing.JButton btSearchFile7;
     private javax.swing.JButton btSearchFile8;
     private javax.swing.JButton btSearchFile9;
+    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox10;
     private javax.swing.JComboBox<String> jComboBox11;

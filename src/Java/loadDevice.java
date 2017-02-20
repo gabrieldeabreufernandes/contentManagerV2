@@ -1,15 +1,26 @@
 package Java;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.nio.channels.FileChannel;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileSystemView;
+import static jdk.nashorn.internal.objects.NativeRegExp.source;
 
 /**
  * @author Gabriel Fernandes
  */
 public class loadDevice extends javax.swing.JFrame {
     
-    main mainScreen = new main();
-
+    private main mainScreen = new main();
+    
     /**
      * Creates new form loadDevice
      */
@@ -97,6 +108,11 @@ public class loadDevice extends javax.swing.JFrame {
         });
 
         jButton1.setText("Load");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Back");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -180,6 +196,108 @@ public class loadDevice extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+        boolean isOK = true;
+        
+        File dir = new File("C:\\ACTIA\\ContentManager\\packages\\");
+        //File arq = new File(dir, txtFieldRouteName.getText()+ ".txt");
+        //String[] children = dir.list();
+
+        /*
+        if (children.length > 0) {
+            System.out.println("Existe arquivo no diretorio..");
+        }else{
+            System.out.println("NAO existe arquivo no diretorio..");
+        }*/
+        
+        if (dir.exists()) {
+            //if(arq.exists()){
+                System.out.println("Directory [packages] already exists !!!");
+                //isOK = false;
+                //JOptionPane.showMessageDialog(null,"Route Name invalid! This name has already been used...");
+            //}else{
+                //System.out.println("Directory [packages] does not exists, let's create it...");
+                //try {
+                //    arq.createNewFile();
+                //} catch (IOException ex) {
+                //    Logger.getLogger(create.class.getName()).log(Level.SEVERE, null, ex);
+                //}
+            //}
+        }else{
+            System.out.println("The directory [packages] does not exist, let's create it...");
+            dir.mkdirs();
+            //try {
+            //    arq.createNewFile();
+            //} catch (IOException ex) {
+            //    Logger.getLogger(create.class.getName()).log(Level.SEVERE, null, ex);
+            //}
+        }
+        
+            
+        File origem = new File("C:\\ACTIA\\ContentManager\\config\\");  
+        File destino = new File("C:\\ACTIA\\ContentManager\\packages\\");  
+
+        FileChannel oriChannel = null;  
+        FileChannel destChannel = null;  
+
+        try {  
+
+            if (!destino.exists())  
+
+                destino.mkdir();  
+
+            File[] listaDeArquivos = origem.listFiles();  
+
+            for (File file : listaDeArquivos) {  
+
+                file.setLastModified(origem.lastModified());  
+
+                // Cria channel na origem  
+                oriChannel = new FileInputStream(file.getPath()).getChannel();  
+
+                // Cria channel no destino  
+                System.out.println("Copiando arquivo: " + file.getName());  
+                destChannel = new FileOutputStream(destino + "\\"  
+                        + file.getName()).getChannel();  
+
+                // Copia conteúdo da origem no destino  
+                destChannel.transferFrom(oriChannel, 0, oriChannel.size());  
+
+                // Fecha channels  
+                oriChannel.close();  
+                destChannel.close();  
+            }  
+
+            Runtime.getRuntime().exec("explorer " + destino.getAbsolutePath());    
+
+        } catch (IOException e) {  
+
+            String msg = e.getMessage();  
+
+        } finally {  
+
+            if (oriChannel != null && oriChannel.isOpen()) {  
+
+                try {  
+                    oriChannel.close();
+                } catch (IOException ex) {
+                    Logger.getLogger(loadDevice.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }  
+
+            if (destChannel != null && destChannel.isOpen()) {  
+
+                try {  
+                    destChannel.close();
+                } catch (IOException ex) {
+                    Logger.getLogger(loadDevice.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }  
+        }
+
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -207,7 +325,7 @@ public class loadDevice extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-        searchDevice();
+        //searchDevice();
         
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {

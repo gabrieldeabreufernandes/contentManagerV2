@@ -201,9 +201,8 @@ public class main extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-              
         //Creates directory for user add the musics and videos
-        File dir = new File("C:\\ACTIA\\ContentManager\\Media\\");
+        File dir = new File("C:\\ACTIA\\ContentManager\\media\\");
         File arq = new File(dir, "Route.txt");
         //dir.mkdirs();
         
