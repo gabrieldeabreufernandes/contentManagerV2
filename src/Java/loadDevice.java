@@ -1,21 +1,73 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Java;
 
+import java.io.File;
+import javax.swing.filechooser.FileSystemView;
+
 /**
- *
- * @author HOME
+ * @author Gabriel Fernandes
  */
 public class loadDevice extends javax.swing.JFrame {
+    
+    main mainScreen = new main();
 
     /**
      * Creates new form loadDevice
      */
     public loadDevice() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        jTextFieldInsertDevice.setText(searchDevice());
+    }
+    
+    
+    static String searchDevice(){
+        
+        String buff = null;
+        System.out.println("Searching devices...");
+
+        //Creates a vector with de devices
+        File[] roots = null;
+
+        FileSystemView fs = FileSystemView.getFileSystemView();
+
+        //verify if the OS are Windows.
+        if (System.getProperties().getProperty("os.name").toLowerCase().contains("windows")) {
+
+            //List the roots directories
+            roots = File.listRoots();
+
+            //Scrolls the vector
+            for (File file : roots) {
+                
+                //Take the description of the directories
+                String descricao = fs.getSystemTypeDescription(file);
+                
+                if (descricao != null) {
+                    
+                    // check if it's a removable disk
+                    if (descricao.endsWith("removível")) {
+                        
+                        //Show device
+                        System.out.println(file.getAbsolutePath());
+                        buff = file.getAbsolutePath();
+                    }
+                }
+            }       //verify is if Linux
+        } else if (System.getProperties().getProperty("os.name").toLowerCase().contains("linux")) {
+
+            //take all the directories mounted on /media
+            roots = fs.getFiles(new File("/media/"), true);
+
+            //Scrolls the vector
+            for (File file : roots) {
+                
+                //Show device
+                System.out.println(file.getAbsolutePath());
+                buff = file.getAbsolutePath();
+            }
+        }
+        
+        return buff;
     }
 
     /**
@@ -38,11 +90,27 @@ public class loadDevice extends javax.swing.JFrame {
 
         jLabelInsertDevice.setText("Insert Device");
 
+        jTextFieldInsertDevice.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldInsertDeviceActionPerformed(evt);
+            }
+        });
+
         jButton1.setText("Load");
 
         jButton2.setText("Back");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Exit");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -87,6 +155,31 @@ public class loadDevice extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jTextFieldInsertDeviceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldInsertDeviceActionPerformed
+        // TODO add your handling code here:
+        
+        jTextFieldInsertDevice.setText(searchDevice());
+    }//GEN-LAST:event_jTextFieldInsertDeviceActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        
+        if(mainScreen == null){
+            mainScreen = new main();
+            mainScreen.setLocationRelativeTo(null);
+            mainScreen.setVisible(true);
+            mainScreen.setResizable(false);
+        }else{
+            mainScreen.setLocationRelativeTo(null);
+            mainScreen.setVisible(true);
+            mainScreen.setResizable(false);
+        }
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -114,6 +207,8 @@ public class loadDevice extends javax.swing.JFrame {
         }
         //</editor-fold>
 
+        searchDevice();
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

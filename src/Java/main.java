@@ -10,6 +10,7 @@ public class main extends javax.swing.JFrame {
     
     private create createScreen;
     private edit editScreen;
+    private loadDevice loadScreen;
 
     /**
      * Creates new form main
@@ -123,7 +124,18 @@ public class main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLoadActionPerformed
-        // TODO add your handling code here:
+        
+        if(loadScreen == null){
+            loadScreen = new loadDevice();
+            loadScreen.setLocationRelativeTo(null);
+            loadScreen.setVisible(true);
+            loadScreen.setResizable(false);
+        }else{
+            loadScreen.setLocationRelativeTo(null);
+            loadScreen.setVisible(true);
+            loadScreen.setResizable(false);
+        }
+        this.dispose();
     }//GEN-LAST:event_btLoadActionPerformed
 
     private void btExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btExitActionPerformed
