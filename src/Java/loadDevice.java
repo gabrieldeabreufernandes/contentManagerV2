@@ -93,13 +93,16 @@ public class loadDevice extends javax.swing.JFrame {
         jLabelInsertDevice = new javax.swing.JLabel();
         jTextFieldInsertDevice = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        jProgressBar1 = new javax.swing.JProgressBar();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jLabel2 = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabelInsertDevice.setText("Insert Device");
+        jLabelInsertDevice.setText("Device");
 
         jTextFieldInsertDevice.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -128,44 +131,59 @@ public class loadDevice extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/company_logo.png"))); // NOI18N
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/powered_by_actia_3.png"))); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jSeparator2)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(68, 68, 68)
+                        .addComponent(jLabel2))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(80, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabelInsertDevice)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextFieldInsertDevice, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(32, 32, 32)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(77, 77, 77))
+                        .addGap(73, 73, 73)
+                        .addComponent(jLabel1)))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(136, 136, 136)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
+                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabelInsertDevice)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jTextFieldInsertDevice, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(124, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(101, 101, 101)
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelInsertDevice)
-                    .addComponent(jTextFieldInsertDevice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
-                .addGap(36, 36, 36)
-                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
-                .addContainerGap(65, Short.MAX_VALUE))
+                    .addComponent(jTextFieldInsertDevice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 5, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(11, 11, 11)
+                .addComponent(jLabel2))
         );
 
         pack();
@@ -233,11 +251,9 @@ public class loadDevice extends javax.swing.JFrame {
             //    Logger.getLogger(create.class.getName()).log(Level.SEVERE, null, ex);
             //}
         }
-        
             
         File origem = new File("C:\\ACTIA\\ContentManager\\config\\");  
         File destino = new File("C:\\ACTIA\\ContentManager\\packages\\");  
-
         FileChannel oriChannel = null;  
         FileChannel destChannel = null;  
 
@@ -277,18 +293,92 @@ public class loadDevice extends javax.swing.JFrame {
 
         } finally {  
 
-            for (int i = 1; i <= 100; i++) {
-                try {
-                        jProgressBar1.repaint();
-                        jProgressBar1.setValue(i);
-                        jProgressBar1.setString(i + "%");
-                        jProgressBar1.repaint();
-                        Thread.sleep(5);
-                } catch (InterruptedException ex) {
-                        ex.printStackTrace();
-                }
+
+            /*
+            try {
+                Thread.sleep(50);
                 //JOptionPane.showMessageDialog(null,"Package Generate uccessfull");
-            } 
+                //Runtime.getRuntime().exec("explorer " + destino.getAbsolutePath());   
+            } catch (InterruptedException ex) {
+                Logger.getLogger(loadDevice.class.getName()).log(Level.SEVERE, null, ex);
+            }*/
+            
+            if (oriChannel != null && oriChannel.isOpen()) {  
+
+                try {  
+                    oriChannel.close();
+                } catch (IOException ex) {
+                    Logger.getLogger(loadDevice.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }  
+
+            if (destChannel != null && destChannel.isOpen()) {  
+
+                try {  
+                    destChannel.close();
+                } catch (IOException ex) {
+                    Logger.getLogger(loadDevice.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            
+            try {
+                Thread.sleep(150);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(loadDevice.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            //JOptionPane.showMessageDialog(null,"Package Generate uccessfull");
+            /*
+            try {   
+                Runtime.getRuntime().exec("explorer " + destino.getAbsolutePath());
+            } catch (IOException ex) {
+                Logger.getLogger(loadDevice.class.getName()).log(Level.SEVERE, null, ex);
+            }*/
+        }
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////
+                
+        File origemMedia = new File("C:\\ACTIA\\ContentManager\\media\\");  
+        File destinoMedia = new File("C:\\ACTIA\\ContentManager\\packages\\");  
+        FileChannel oriMediaChannel = null;  
+        FileChannel destMediaChannel = null;  
+
+        try {  
+
+            if (!destinoMedia.exists())  
+
+                destinoMedia.mkdir();  
+
+            File[] listaDeArquivos = origemMedia.listFiles();  
+
+            for (File file : listaDeArquivos) {  
+
+                file.setLastModified(origemMedia.lastModified());  
+
+                // Cria channel na origem  
+                oriMediaChannel = new FileInputStream(file.getPath()).getChannel();  
+
+                // Cria channel no destino  
+                System.out.println("Copiando arquivo: " + file.getName());  
+                destMediaChannel = new FileOutputStream(destinoMedia + "\\"  
+                        + file.getName()).getChannel();  
+
+                // Copia conteúdo da origem no destino  
+                destMediaChannel.transferFrom(oriMediaChannel, 0, oriMediaChannel.size());  
+
+                // Fecha channels  
+                oriChannel.close();  
+                destChannel.close();  
+            }  
+
+            //Runtime.getRuntime().exec("explorer " + destino.getAbsolutePath());    
+
+        } catch (IOException e) {  
+
+            String msg = e.getMessage();  
+
+        } finally {  
+
+
             try {
                 Thread.sleep(50);
                 //JOptionPane.showMessageDialog(null,"Package Generate uccessfull");
@@ -316,12 +406,12 @@ public class loadDevice extends javax.swing.JFrame {
             }
             
             try {
-                Thread.sleep(150);
+                Thread.sleep(300);
             } catch (InterruptedException ex) {
                 Logger.getLogger(loadDevice.class.getName()).log(Level.SEVERE, null, ex);
             }
-            JOptionPane.showMessageDialog(null,"Package Generate uccessfull");
-            try {   
+            try {
+                JOptionPane.showMessageDialog(null,"Package Generate uccessfull");
                 Runtime.getRuntime().exec("explorer " + destino.getAbsolutePath());
             } catch (IOException ex) {
                 Logger.getLogger(loadDevice.class.getName()).log(Level.SEVERE, null, ex);
@@ -382,8 +472,11 @@ public class loadDevice extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabelInsertDevice;
-    private javax.swing.JProgressBar jProgressBar1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTextField jTextFieldInsertDevice;
     // End of variables declaration//GEN-END:variables
 }

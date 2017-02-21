@@ -156,6 +156,12 @@ public class create extends javax.swing.JFrame {
         jLabel1.setText("1");
         jLabel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+
         btSearchFile1.setText("...");
         btSearchFile1.setMaximumSize(new java.awt.Dimension(30, 23));
         btSearchFile1.setMinimumSize(new java.awt.Dimension(30, 23));
@@ -970,6 +976,20 @@ public class create extends javax.swing.JFrame {
         String nameFile = null;
         nameFile = searchFile();
         jTextField7.setText(nameFile);
+        //System.out.println("jTextField7 = "+nameFile);
+
+        //fileContent.setFileName(nameFile);
+        //System.out.println("setFileName = " +fileContent.getFileName());
+
+        //fileContent.setPosition(2);
+        //System.out.println("Position = "+fileContent.getPosition());
+
+        //routeContent.add(fileContent);
+        //routeContent.add(1,fileContent);
+        routeContent.add("7:" + nameFile);
+        System.out.println("Added..");
+        
+        System.out.println("Added = " + routeContent.get(6));//.getFileName());
     }//GEN-LAST:event_btSearchFile7ActionPerformed
 
     private void btSearchFile9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSearchFile9ActionPerformed
@@ -1027,7 +1047,7 @@ public class create extends javax.swing.JFrame {
         String nameFile = null;
         nameFile = searchFile();
         jTextField2.setText(nameFile);
-        System.out.println("jTextField2 = "+nameFile);
+        //System.out.println("jTextField2 = "+nameFile);
 
         //fileContent.setFileName(nameFile);
         //System.out.println("setFileName = " +fileContent.getFileName());
@@ -1041,10 +1061,6 @@ public class create extends javax.swing.JFrame {
         System.out.println("Added..");
         
         System.out.println("Added = " + routeContent.get(1));//.getFileName());
-        
-        
-        
-        
     }//GEN-LAST:event_btSearchFile2ActionPerformed
 
     private void btSearchFile1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSearchFile1ActionPerformed
@@ -1052,7 +1068,7 @@ public class create extends javax.swing.JFrame {
         String nameFile = null;
         nameFile = searchFile();
         jTextField1.setText(nameFile);
-        System.out.println("jTextField1 = "+nameFile);
+        //System.out.println("jTextField1 = "+nameFile);
         
         //fileContent.setFileName(c);
         //System.out.println("setFileName = " +fileContent.getFileName());
@@ -1125,6 +1141,21 @@ public class create extends javax.swing.JFrame {
         String nameFile = null;
         nameFile = searchFile();
         jTextField3.setText(nameFile);
+        //System.out.println("jTextField4 = "+nameFile);
+
+        //fileContent.setFileName(nameFile);
+        //System.out.println("setFileName = " +fileContent.getFileName());
+
+        //fileContent.setPosition(2);
+        //System.out.println("Position = "+fileContent.getPosition());
+
+        //routeContent.add(fileContent);
+        //routeContent.add(1,fileContent);
+        routeContent.add("3:" + nameFile);
+        System.out.println("Added..");
+        
+        System.out.println("Added = " + routeContent.get(2));//.getFileName());
+
     }//GEN-LAST:event_btSearchFile3ActionPerformed
 
     private void btSearchFile4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSearchFile4ActionPerformed
@@ -1132,6 +1163,21 @@ public class create extends javax.swing.JFrame {
         String nameFile = null;
         nameFile = searchFile();
         jTextField4.setText(nameFile);
+        System.out.println("jTextField4 = "+nameFile);
+
+        //fileContent.setFileName(nameFile);
+        //System.out.println("setFileName = " +fileContent.getFileName());
+
+        //fileContent.setPosition(2);
+        //System.out.println("Position = "+fileContent.getPosition());
+
+        //routeContent.add(fileContent);
+        //routeContent.add(1,fileContent);
+        routeContent.add("4:" + nameFile);
+        System.out.println("Added..");
+        
+        System.out.println("Added = " + routeContent.get(3));//.getFileName());
+
     }//GEN-LAST:event_btSearchFile4ActionPerformed
 
     private void btSearchFile5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSearchFile5ActionPerformed
@@ -1139,6 +1185,20 @@ public class create extends javax.swing.JFrame {
         String nameFile = null;
         nameFile = searchFile();
         jTextField5.setText(nameFile);
+        //System.out.println("jTextField4 = "+nameFile);
+
+        //fileContent.setFileName(nameFile);
+        //System.out.println("setFileName = " +fileContent.getFileName());
+
+        //fileContent.setPosition(2);
+        //System.out.println("Position = "+fileContent.getPosition());
+
+        //routeContent.add(fileContent);
+        //routeContent.add(1,fileContent);
+        routeContent.add("5:" + nameFile);
+        //System.out.println("Added..");
+        
+        System.out.println("Added = " + routeContent.get(4));//.getFileName());
     }//GEN-LAST:event_btSearchFile5ActionPerformed
 
     private void btSearchFile6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSearchFile6ActionPerformed
@@ -1146,6 +1206,20 @@ public class create extends javax.swing.JFrame {
         String nameFile = null;
         nameFile = searchFile();
         jTextField6.setText(nameFile);
+        //System.out.println("jTextField6 = "+nameFile);
+
+        //fileContent.setFileName(nameFile);
+        //System.out.println("setFileName = " +fileContent.getFileName());
+
+        //fileContent.setPosition(2);
+        //System.out.println("Position = "+fileContent.getPosition());
+
+        //routeContent.add(fileContent);
+        //routeContent.add(1,fileContent);
+        routeContent.add("6:" + nameFile);
+        //System.out.println("Added..");
+        
+        System.out.println("Added = " + routeContent.get(5));//.getFileName());
     }//GEN-LAST:event_btSearchFile6ActionPerformed
 
     private void btSearchFile8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSearchFile8ActionPerformed
@@ -1153,6 +1227,20 @@ public class create extends javax.swing.JFrame {
         String nameFile = null;
         nameFile = searchFile();
         jTextField8.setText(nameFile);
+        //System.out.println("jTextField8 = "+nameFile);
+
+        //fileContent.setFileName(nameFile);
+        //System.out.println("setFileName = " +fileContent.getFileName());
+
+        //fileContent.setPosition(2);
+        //System.out.println("Position = "+fileContent.getPosition());
+
+        //routeContent.add(fileContent);
+        //routeContent.add(1,fileContent);
+        routeContent.add("8:" + nameFile);
+        //System.out.println("Added..");
+        
+        System.out.println("Added = " + routeContent.get(7));//.getFileName());
     }//GEN-LAST:event_btSearchFile8ActionPerformed
 
     private void btSearchFile10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSearchFile10ActionPerformed
@@ -1244,17 +1332,22 @@ public class create extends javax.swing.JFrame {
                 FileWriter fileWriter;
                 fileWriter = new FileWriter(arq, false);
                 PrintWriter printWriter = new PrintWriter(fileWriter);
+                
                 //String buff;
+                //O NOME DA ROTA SERA SETADO COMO NOME DO JSON
+                /*
                 buff = "routename:" + txtFieldRouteName.getText()+ ";";
                 System.out.println("Name captured = " + buff);
                 printWriter.println(buff);
                 System.out.println("Name added");
+                buff = "";*/
                 
-                buff = "";
+                //A DURACAO, POR HORA, NAO SERA USADA PELO APP NEM PELO ACT
+                /*
                 buff = "duration:" + txtFieldRouteDuration.getText()+ ";";
                 System.out.println("Duration captured = " + buff);
                 printWriter.println(buff);
-                System.out.println("Duration added");
+                System.out.println("Duration added");*/
 
                 buff = "";
                 int n = routeContent.size();
@@ -1269,6 +1362,8 @@ public class create extends javax.swing.JFrame {
                 
                 printWriter.close();
                 fileWriter.close();
+                
+                JOptionPane.showMessageDialog(null,"Successfully generated route settings...");
                 
             } catch (IOException ex) {
                 Logger.getLogger(create.class.getName()).log(Level.SEVERE, null, ex);
@@ -1303,6 +1398,10 @@ public class create extends javax.swing.JFrame {
         }
         this.dispose();        
     }//GEN-LAST:event_btLoadDeviceActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
